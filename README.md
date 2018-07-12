@@ -14,9 +14,15 @@ Then, compile the opus:
 
 ```
 cd $GOPATH/src/github.com/winlinvip/go-opus &&
-git clone https://github.com/winlinvip/opus.git opus-lib &&
-cd opus-lib/ && bash autogen.sh && ./configure --prefix=`pwd`/objs && make && make install &&
-cd ..
+(git clone https://github.com/winlinvip/opus.git opus-lib && cd opus-lib && bash autogen.sh && ./configure --prefix=`pwd`/objs && make && make install) &&
+(git clone https://github.com/winlinvip/opusfile.git && cd opusfile &&
+	export PKG_CONFIG_PATH=`pwd`/../opus-lib/objs/lib/pkgconfig &&
+	bash autogen.sh && ./configure --prefix=`pwd`/objs --disable-http && make && make install) &&
+(git clone https://github.com/winlinvip/libopusenc.git && cd libopusenc &&
+	bash autogen.sh && ./configure --prefix=`pwd`/objs && make && make install) &&
+(git clone https://github.com/winlinvip/opus-tools.git && cd opus-tools &&
+	export PKG_CONFIG_PATH=`pwd`/../opus-lib/objs/lib/pkgconfig:`pwd`/../opusfile/objs/lib/pkgconfig:`pwd`/../libopusenc/objs/lib/pkgconfig &&
+	bash autogen.sh && ./configure --prefix=`pwd`/objs && make && make install)
 ```
 
 Done, import and use the package:

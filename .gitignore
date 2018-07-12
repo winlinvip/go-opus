@@ -13,3 +13,9 @@
 
 .idea
 opus-lib
+opus-tools
+opusfile
+libopusenc
+doc/adts_data.aac
+doc/adts_data.pcm_s16le.wav
+doc/adts_data.opus
