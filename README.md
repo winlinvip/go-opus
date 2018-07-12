@@ -14,7 +14,8 @@ Then, compile the opus:
 
 ```
 cd $GOPATH/src/github.com/winlinvip/go-opus &&
-(git clone https://github.com/winlinvip/opus.git opus-lib && cd opus-lib && bash autogen.sh && ./configure --prefix=`pwd`/objs && make && make install) &&
+(git clone https://github.com/winlinvip/opus.git opus-lib && cd opus-lib &&
+	bash autogen.sh && ./configure --prefix=`pwd`/objs && make && make install) &&
 (git clone https://github.com/winlinvip/opusfile.git && cd opusfile &&
 	export PKG_CONFIG_PATH=`pwd`/../opus-lib/objs/lib/pkgconfig &&
 	bash autogen.sh && ./configure --prefix=`pwd`/objs --disable-http && make && make install) &&
