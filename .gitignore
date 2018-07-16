@@ -19,3 +19,6 @@ libopusenc
 doc/adts_data.aac
 doc/adts_data.pcm_s16le.wav
 doc/adts_data.opus
+doc/aac_decoder.wav
+doc/opus_decoder.wav
+.DS_Store
